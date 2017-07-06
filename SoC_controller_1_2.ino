@@ -1,6 +1,8 @@
 // Microcontroller code for the Sounds of Canada exhibit for
 // Science World.
 // Jeff Cowan
+//
+// Teensy LC
 // Version 1.0 Feb 16, 2017
 // Version 1.1 Mar 18, 2017 - Test build for NGX
 // Version 1.2 Apr 16, 2017 - Added analog deadband and reduced transmission
@@ -99,8 +101,8 @@ void scan(byte number){
 void transmit(byte number, Channel data){
     Keyboard.print(number, HEX);
     Keyboard.print(data.objectID, HEX);
-      if(data.volumeSetting <= 0x0F)
-    Keyboard.print("0");
+    if(data.volumeSetting <= 0x0F)
+      Keyboard.print("0");
     Keyboard.print(data.volumeSetting, HEX);
     Keyboard.print("\r\n");
   
